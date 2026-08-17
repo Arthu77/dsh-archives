@@ -1,0 +1,53 @@
+{
+  "name": "dsh-archives",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness archived-session manager: a settings page (设置 → 归档管理) lists every archived session with restore (back to the sidebar) and delete (remove from disk) actions. Complements the built-in archive-only row menu.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "archive",
+    "session",
+    "settings"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthu77/dsh-archives.git"
+  },
+  "homepage": "https://github.com/Arthu77/dsh-archives",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-storage-domain": "*",
+    "@deepseek-ai/dsh-session-persistence": "*",
+    "@deepseek-ai/dsh-session-query": "*",
+    "react": "^18.2.0"
+  }
+}
